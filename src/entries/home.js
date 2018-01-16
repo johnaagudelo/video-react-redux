@@ -3,12 +3,13 @@ import { hydrate } from 'react-dom';
 import Home from '../pages/containers/home';
 // import Playlist from './src/playlist/components/playlist';
 import data from '../api.json';
+import normalizedData from '../schemas/index';
 // console.log('Hola mundo!' )
 
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from '../reducers/data'
-
+console.log(normalizedData)
 const inicialState = {
     data: { 
         ...data,
@@ -22,7 +23,7 @@ const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
-console.log(store.getState())
+//console.log(store.getState())
 
 const homeContainer = document.getElementById('home-container')
 
