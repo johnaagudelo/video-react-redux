@@ -2,24 +2,29 @@ import React from 'react';
 import { hydrate } from 'react-dom';
 import Home from '../pages/containers/home';
 // import Playlist from './src/playlist/components/playlist';
-import data from '../api.json';
-import normalizedData from '../schemas/index';
+//import data from '../api.json';
 // console.log('Hola mundo!' )
 
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-import reducer from '../reducers/data'
-console.log(normalizedData)
-const inicialState = {
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import reducer from '../reducers/index';
+import { Map as map } from 'immutable'
+
+/* const inicialState = {
     data: { 
-        ...data,
+        entities: data.entities,
+        categories: data.result.categories,
+        search: [],
      },
-     search: [],
-}
+     modal: {
+        visibility: false,
+        mediaId: null,
+     }
+} */
 
 const store = createStore(
     reducer,
-    inicialState,
+    map({}),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
